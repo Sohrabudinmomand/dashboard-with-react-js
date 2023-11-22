@@ -6,6 +6,9 @@ import React from 'react';
 // for interacting with the DOM in React such as rendering React into DOM
 import ReactDom from 'react-dom';
 
+// importing the tailwind css
+import './index.css';
+
 // the App component is the root component of the applicition
 import App from './App';
 
