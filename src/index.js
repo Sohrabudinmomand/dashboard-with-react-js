@@ -12,5 +12,12 @@ import './index.css';
 // the App component is the root component of the applicition
 import App from './App';
 
+import { ContextProvider } from './context/ContextProvider';
+
 // This line uses the ReactDOM.render() method to render the "App" component into the HTML element with the id "root" in the DOM.
-ReactDom.render(<App />, document.getElementById('root'));
+ReactDom.render(
+    <ContextProvider>
+        <App />
+    </ContextProvider>,
+    document.getElementById('root')
+);
