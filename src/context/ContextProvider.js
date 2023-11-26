@@ -12,12 +12,25 @@ const initialState = {
 export const ContextProvider = ({ children }) => {
     const [activeMenu, setActiveMenu] = useState(true);
 
+    const [isClicked, setisCliked] = useState(initialState);
+
+    // using this state to know the size of the screen device
+    const [screenSize, setscreenSize] = useState(undefined);
+
+    const handleClick = (clicked) => {
+        setisCliked({ ...initialState, [clicked]: true });
+    }
+
     return (
         <StateContext.Provider
             value={{
                 activeMenu,
-                setActiveMenu
-
+                setActiveMenu,
+                isClicked,
+                setisCliked,
+                handleClick,
+                screenSize,
+                setscreenSize
             }}>
             {children}
         </StateContext.Provider>
